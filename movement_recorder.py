@@ -92,9 +92,4 @@ def track_movement(drive_base: DriveBase, hub: PrimeHub, drive_base_name: str = 
         elif Button.RIGHT in buttons:
             mode = "straight"
             hub.display.char("S")
-#run_task(track_movement(drive, hub, "drive"))
-drive.straight(434)
-drive.turn(-87.9)
-drive.straight(349)
-drive.turn(90.8)
-drive.curve(352.0, 99.1)
+run_task(track_movement(drive, hub, "drive"))
