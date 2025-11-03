@@ -1,1 +1,50 @@
+from pybricks.parameters import Button
+from pybricks.tools import multitask, run_task, wait
+from robot import hub , drive
+from run1 import run1
+from run2 import run2
 
+hub.system.set_stop_button((Button.LEFT, Button.RIGHT))
+
+async def center_button_pressed_task():
+
+    await wait(750)
+
+    while True:
+        if Button.CENTER in hub.buttons.pressed():
+            return
+        await wait(100)
+
+async def switcher(run_list: Dict,min_run_number:int, max_run_number:int):
+    current_run_number = min_run_number
+    default_drive_settings = drive.settings()
+    while True:
+        hub.display.number(current_run_number)
+        pressed_buttons = hub.buttons.pressed()
+        if Button.LEFT in pressed_buttons:
+            if current_run_number == min_run_number:
+                current_run_number = max_run_number
+            else:
+                current_run_number -= 1
+        if Button.RIGHT in pressed_buttons:
+            if current_run_number == max_run_number:
+                current_run_number = min_run_number
+            else:
+                current_run_number += 1
+        if Button.CENTER in pressed_buttons:
+            drive.reset()
+            drive.settings(*default_drive_settings)
+            drive.use_gyro(True)
+            await multitask(
+                run_list[current_run_number](),
+                center_button_pressed_task(),
+                race=True
+            )
+            await wait(750)
+        await wait(125)
+
+run_list = {}
+run_list.update({1 : run1})
+run_list.update({2 : run2})
+
+run_task(switcher(run_list,1,2))
