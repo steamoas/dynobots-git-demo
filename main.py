@@ -3,6 +3,7 @@ from pybricks.tools import multitask, run_task, wait
 from robot import hub , drive
 from run1 import run1
 from run2 import run2
+from sweeper import sweeper
 
 hub.system.set_stop_button((Button.LEFT, Button.RIGHT))
 
@@ -45,6 +46,7 @@ async def switcher(run_list: Dict, min_run_number:int, max_run_number:int):
                 center_button_pressed_task(),
                 race=True
             )
+            drive.stop()
             while Button.CENTER in hub.buttons.pressed():
                 await wait(15)
         await wait(25)
@@ -52,5 +54,6 @@ async def switcher(run_list: Dict, min_run_number:int, max_run_number:int):
 run_list = {}
 run_list.update({1 : run1})
 run_list.update({2 : run2})
+run_list.update({3 : sweeper})
 
-run_task(switcher(run_list,1,2))
+run_task(switcher(run_list,1,3))
