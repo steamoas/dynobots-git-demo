@@ -8,7 +8,8 @@ hub.system.set_stop_button((Button.LEFT, Button.RIGHT))
 
 async def center_button_pressed_task():
 
-    await wait(750)
+    while Button.CENTER in hub.buttons.pressed():
+        await wait(15)
 
     while True:
         if Button.CENTER in hub.buttons.pressed():
@@ -26,11 +27,15 @@ async def switcher(run_list: Dict, min_run_number:int, max_run_number:int):
                 current_run_number = max_run_number
             else:
                 current_run_number -= 1
+            while Button.LEFT in hub.buttons.pressed():
+                await wait(15)
         if Button.RIGHT in pressed_buttons:
             if current_run_number == max_run_number:
                 current_run_number = min_run_number
             else:
                 current_run_number += 1
+            while Button.RIGHT in hub.buttons.pressed():
+                await wait(15)
         if Button.CENTER in pressed_buttons:
             drive.reset()
             drive.settings(*default_drive_settings)
@@ -40,8 +45,9 @@ async def switcher(run_list: Dict, min_run_number:int, max_run_number:int):
                 center_button_pressed_task(),
                 race=True
             )
-            await wait(750)
-        await wait(125)
+            while Button.CENTER in hub.buttons.pressed():
+                await wait(15)
+        await wait(25)
 
 run_list = {}
 run_list.update({1 : run1})
