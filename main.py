@@ -15,7 +15,7 @@ async def center_button_pressed_task():
             return
         await wait(100)
 
-async def switcher(run_list: Dict,min_run_number:int, max_run_number:int):
+async def switcher(run_list: Dict, min_run_number:int, max_run_number:int):
     current_run_number = min_run_number
     default_drive_settings = drive.settings()
     while True:

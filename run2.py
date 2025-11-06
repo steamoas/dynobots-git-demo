@@ -1,3 +1,4 @@
+from pybricks.tools import run_task
 from robot import drive,left_attach
 async def run2():
 #left_attach.run_until_stalled(-100, duty_limit=50);
@@ -8,3 +9,6 @@ async def run2():
     await drive.straight(150)
     await drive.turn(90)
     await drive.straight(400)
+
+if __name__ == "__main__":
+    run_task(run2())
