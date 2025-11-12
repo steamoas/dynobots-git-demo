@@ -3,6 +3,7 @@ from pybricks.tools import multitask, run_task, wait
 from robot import hub , drive
 from run1 import run1
 from run2 import run2
+from run3 import run3
 from sweeper import sweeper
 from across_the_table import accross_the_table
 
@@ -58,6 +59,7 @@ run_list = {}
 run_list.update({1 : run1})
 run_list.update({3 : run2})
 run_list.update({4 : sweeper})
+run_list.update({5:run3})
 run_list.update({2 : accross_the_table})
 
 run_task(switcher(run_list))

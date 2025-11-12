@@ -1,3 +1,7 @@
+#left wheel 0.2
+# 5,6
+
+
 from pybricks.tools import multitask, run_task, wait
 from robot import drive,right_attach
 async def run1():
@@ -9,7 +13,7 @@ async def run1():
 
     await right_attach.run_target(300,90)
     await multitask(
-        drive.turn(-40),
+        drive.turn(-35),
         wait(1500),
         race=True
     )
