@@ -6,6 +6,9 @@ from run2 import run2
 from run3 import run3
 from sweeper import sweeper
 from across_the_table import accross_the_table
+from tip_the_scales_a import tip_the_scales_a
+from tip_the_scales_b import tip_the_scales_b
+
 
 hub.system.set_stop_button((Button.LEFT, Button.RIGHT))
 
@@ -57,9 +60,10 @@ async def switcher(run_list: Dict):
 
 run_list = {}
 run_list.update({1 : run1})
+run_list.update({2 : accross_the_table})
 run_list.update({3 : run2})
 run_list.update({4 : sweeper})
 run_list.update({5:run3})
-run_list.update({2 : accross_the_table})
-
+run_list.update({6:tip_the_scales_a})
+run_list.update({7:tip_the_scales_b})
 run_task(switcher(run_list))
