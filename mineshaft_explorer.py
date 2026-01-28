@@ -8,7 +8,7 @@ from robot import drive, left_attach
 
 async def mineshaft_explorer():
 
-    await drive.straight
+    await drive.straight()
 
 if __name__== "__main__":
     run_task(mineshaft_explorer())

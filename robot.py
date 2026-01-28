@@ -1,3 +1,4 @@
+
 from pybricks.hubs import PrimeHub
 from pybricks.robotics import DriveBase
 from pybricks.pupdevices import Motor, ColorSensor
@@ -18,3 +19,4 @@ drive = DriveBase(left_drive, right_drive, 62.4, 135)
 drive.heading_control.pid(10000, 0, 8000, 3, 7)
 
 drive.use_gyro(True)
+print (hub.battery.voltage())
