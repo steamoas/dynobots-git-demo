@@ -9,6 +9,7 @@ from across_the_table import accross_the_table
 from tip_the_scales_a import tip_the_scales_a
 from tip_the_scales_b import tip_the_scales_b
 from whats_on_sale import whats_on_sale
+from minecart import minecart
 
 hub.system.set_stop_button((Button.LEFT, Button.RIGHT))
 
@@ -68,4 +69,5 @@ run_list.update({5: run3})
 run_list.update({6: tip_the_scales_a})
 run_list.update({7: tip_the_scales_b})
 run_list.update({8: whats_on_sale})
+run_list.update({9: minecart})
 run_task(switcher(run_list))

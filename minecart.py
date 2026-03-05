@@ -7,16 +7,18 @@ from robot import drive, right_attach
 
 
 async def minecart():
-    await drive.straight(400)
+    await drive.straight(410)
     await drive.turn(40)
     await drive.straight(400)
     await drive.turn(45)
     await drive.straight(140)
     await drive.turn(-60)
     await drive.straight(10)
-    await right_attach.run_angle(75, -175)
+    await right_attach.run_angle(70, -200)
+    await right_attach.run_angle(700, 175)
     await wait(2000)
-    await drive.straight(-60)
+    await drive.turn(10)
+    await drive.straight(-50)
     await drive.turn(-90)
     await drive.straight(100)
     await drive.turn(-90)
