@@ -9,9 +9,12 @@ async def run3():
     await drive.straight(665)
     await drive.straight(-200)
     await left_attach.run_angle(670, 130)
-    await drive.straight(300)
+    await drive.straight(260)
     await left_attach.run_time(100, 1000)
-    # await drive.turn(-55)
+    await drive.turn(90)
+    await drive.straight(315)
+    await drive.turn(70)
+    await drive.straight(-200)
 
 
 #   await drive.straight(-715)
