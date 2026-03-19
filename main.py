@@ -10,6 +10,7 @@ from tip_the_scales_a import tip_the_scales_a
 from tip_the_scales_b import tip_the_scales_b
 from whats_on_sale import whats_on_sale
 from minecart import minecart
+from heavy_lifting import heavy_lifting
 
 hub.system.set_stop_button((Button.LEFT, Button.RIGHT))
 
@@ -70,4 +71,5 @@ run_list.update({6: tip_the_scales_a})
 run_list.update({7: tip_the_scales_b})
 run_list.update({8: whats_on_sale})
 run_list.update({9: minecart})
+run_list.update({10: heavy_lifting})
 run_task(switcher(run_list))
