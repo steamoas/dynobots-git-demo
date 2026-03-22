@@ -14,9 +14,13 @@ async def run2():
     await drive.turn(-90)
     await drive.straight(200)
     await drive.turn(90)
-    await drive.straight(250)
+    #    await drive.straight(250)
+    drive.drive(300, 0)
+    await wait(1250)
+    await drive.straight(-150)
+    await drive.turn(-20)
     drive.settings(straight_speed=400)
-    await drive.straight(-850)
+    await drive.straight(-550)
 
 
 if __name__ == "__main__":

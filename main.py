@@ -54,6 +54,7 @@ async def switcher(run_list: Dict):
             drive.reset()
             drive.settings(*default_drive_settings)
             drive.use_gyro(True)
+
             await multitask(
                 run_list[current_run_number](), center_button_pressed_task(), race=True
             )
