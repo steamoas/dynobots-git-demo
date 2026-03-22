@@ -10,18 +10,18 @@ from robot import drive, left_attach
 
 async def heavy_lifting():
 
-    await left_attach.run_angle(100, -50)
+    await left_attach.run_angle(100, -45)
     await drive.straight(100)
     await drive.turn(45)
     await drive.straight(225)
     await drive.turn(-40)
     await drive.straight(400)
     await drive.turn(-22)
-    await left_attach.run_angle(300, -35)
+    # await left_attach.run_angle(300, -35)
     await drive.straight(160)
     await left_attach.run_angle(300, -100)
     await drive.turn(40)
-    await drive.straight(140)
+    await drive.straight(145)
 
 
 if __name__ == "__main__":

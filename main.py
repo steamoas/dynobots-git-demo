@@ -1,4 +1,5 @@
 from pybricks.parameters import Button
+
 from pybricks.tools import multitask, run_task, wait
 from robot import hub, drive
 from run1 import run1
@@ -11,6 +12,7 @@ from tip_the_scales_b import tip_the_scales_b
 from whats_on_sale import whats_on_sale
 from minecart import minecart
 from heavy_lifting import heavy_lifting
+from statue import statue
 
 hub.system.set_stop_button((Button.LEFT, Button.RIGHT))
 
@@ -72,4 +74,5 @@ run_list.update({7: tip_the_scales_b})
 run_list.update({8: whats_on_sale})
 run_list.update({9: minecart})
 run_list.update({10: heavy_lifting})
+run_list.update({11: statue})
 run_task(switcher(run_list))

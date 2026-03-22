@@ -5,10 +5,10 @@
 from pybricks.tools import run_task
 from robot import drive
 
-async def 12sweeper():
+
+async def sweeper():
     await drive.straight(650)
     await drive.straight(-625)
-
 
 
 if __name__ == "__main__":
