@@ -5,7 +5,7 @@
 from pybricks.tools import run_task
 from robot import drive
 
-async def sweeper():
+async def 12sweeper():
     await drive.straight(650)
     await drive.straight(-625)
 

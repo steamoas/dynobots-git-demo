@@ -11,7 +11,7 @@ async def tip_the_scales_a():
     await left_attach.run_until_stalled(300, duty_limit=30)
     await left_attach.run_angle(320, -150)
 
-    await drive.curve(210, 64)
+    await drive.curve(210, 70)
 
     await drive.straight(690)
 
