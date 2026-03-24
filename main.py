@@ -1,7 +1,7 @@
 from pybricks.parameters import Button, Color
 
 from pybricks.tools import multitask, run_task, wait
-from robot import hub, drive, left_drive, left_attach
+from robot import hub, drive, left_drive, left_attach, right_attach
 from run1 import run1
 from run2 import run2
 from run3 import run3
@@ -63,6 +63,7 @@ async def switcher(run_list: Dict):
             drive.stop()
             hub.light.on(Color.ORANGE)
             left_attach.stop()
+            right_attach.stop()
             while Button.CENTER in hub.buttons.pressed():
                 await wait(15)
         await wait(25)

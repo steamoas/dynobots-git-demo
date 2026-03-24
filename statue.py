@@ -12,7 +12,7 @@ async def statue():
     await drive.straight(290)
     await drive.turn(90)
     await drive.straight(500)
-    await drive.turn(-89)
+    await drive.turn(-90)
     await left_attach.run_until_stalled(300, duty_limit=20)
 
     await drive.straight(35)
