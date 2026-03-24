@@ -1,7 +1,7 @@
-from pybricks.parameters import Button
+from pybricks.parameters import Button, Color
 
 from pybricks.tools import multitask, run_task, wait
-from robot import hub, drive
+from robot import hub, drive, left_drive, left_attach
 from run1 import run1
 from run2 import run2
 from run3 import run3
@@ -29,6 +29,7 @@ async def center_button_pressed_task():
 
 
 async def switcher(run_list: Dict):
+    hub.light.on(Color.ORANGE)
     min_run_number = min(run_list.keys())
     max_run_number = max(run_list.keys())
     current_run_number = min_run_number
@@ -53,21 +54,24 @@ async def switcher(run_list: Dict):
         if Button.CENTER in pressed_buttons:
             drive.reset()
             drive.settings(*default_drive_settings)
+            hub.light.on(Color.GREEN)
             drive.use_gyro(True)
 
             await multitask(
                 run_list[current_run_number](), center_button_pressed_task(), race=True
             )
             drive.stop()
+            hub.light.on(Color.ORANGE)
+            left_attach.stop()
             while Button.CENTER in hub.buttons.pressed():
                 await wait(15)
         await wait(25)
 
 
 run_list = {}
-run_list.update({1: run2})
-run_list.update({2: run3})
-run_list.update({3: minecart})
+run_list.update({1: minecart})
+run_list.update({2: run2})
+run_list.update({3: run3})
 run_list.update({4: statue})
 run_list.update({5: tip_the_scales_b})
 run_list.update({6: run1})
