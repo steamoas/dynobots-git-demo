@@ -12,9 +12,8 @@ async def minecart():
     await drive.straight(400)
     await drive.turn(20)
     await drive.straight(65)
-    #
     right_attach.run(-100)
-    await wait(2000)
+    await wait(1500)
     # right_attach.run(100)
     # await  wait(200)
     # await right_attach.run_angle(100, -100)

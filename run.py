@@ -2,6 +2,7 @@
 import sys
 import os
 import subprocess
+import pybricksdev.tools
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:
