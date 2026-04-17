@@ -6,12 +6,14 @@ from robot import drive, right_attach, left_attach
 async def run3():
     left_attach.hold()
     drive.settings(straight_speed=600)
+    await right_attach.run_until_stalled(300, duty_limit=50)
     await drive.straight(670)
     await drive.turn(50)
-    await drive.straight(120)
+    await drive.straight(130)
     await drive.turn(-100)
-    await drive.straight(80)
-
+    await drive.straight(120)
+    await right_attach.run_angle(600,-200)
+    await drive.turn(20)
 
 
 
