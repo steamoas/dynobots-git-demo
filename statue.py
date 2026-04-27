@@ -11,7 +11,7 @@ from robot import drive, left_attach
 async def statue():
     await drive.straight(280)
     await drive.turn(90)
-    await drive.straight(505)
+    await drive.straight(515)
     await drive.turn(-90)
     await left_attach.run_until_stalled(300, duty_limit=20)
 

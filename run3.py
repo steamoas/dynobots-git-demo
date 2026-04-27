@@ -1,3 +1,4 @@
+from pybricks.robotics import DriveBase
 from pybricks.tools import multitask, run_task, wait
 from pybricks.parameters import Stop
 from robot import drive, right_attach, left_attach
@@ -6,14 +7,18 @@ from robot import drive, right_attach, left_attach
 async def run3():
     left_attach.hold()
     drive.settings(straight_speed=600)
-    await right_attach.run_until_stalled(300, duty_limit=50)
-    await drive.straight(670)
-    await drive.turn(50)
-    await drive.straight(130)
+    await right_attach.run_until_stalled(300, duty_limit=30)
+    await drive.straight(645)
+    await drive.turn(40)
+    await drive.straight(175)
     await drive.turn(-100)
-    await drive.straight(120)
-    await right_attach.run_angle(600,-200)
-    await drive.turn(20)
+    # await drive.straight(120)
+    await right_attach.run_angle(600,-65)
+    await drive.straight(150)
+    await drive.straight(-60)
+    await right_attach.run_angle(400,-130)
+    await drive.straight(-200)
+
 
 
 

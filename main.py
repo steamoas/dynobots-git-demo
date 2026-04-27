@@ -29,7 +29,7 @@ async def center_button_pressed_task():
 
 
 async def switcher(run_list: Dict):
-    hub.light.on(Color.ORANGE)
+    hub.light.on(Color.CYAN)
     min_run_number = min(run_list.keys())
     max_run_number = max(run_list.keys())
     current_run_number = min_run_number
@@ -61,7 +61,7 @@ async def switcher(run_list: Dict):
                 run_list[current_run_number](), center_button_pressed_task(), race=True
             )
             drive.stop()
-            hub.light.on(Color.ORANGE)
+            hub.light.on(Color.CYAN)
             left_attach.stop()
             right_attach.stop()
             while Button.CENTER in hub.buttons.pressed():
