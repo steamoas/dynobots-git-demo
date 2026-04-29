@@ -8,19 +8,21 @@ async def run3():
     left_attach.hold()
     drive.settings(straight_speed=600)
     await right_attach.run_until_stalled(300, duty_limit=30)
+    await right_attach.run_angle(150,-70)
     await drive.straight(630)
     await drive.turn(60)
-    await drive.straight(120)
+    await drive.straight(135)
     await drive.turn(-95)
-    await drive.straight(120)
+    await drive.straight(90)
     await right_attach.run_angle(600,-65)
     drive.drive(300,0)
     await wait(1000)
-    await drive.straight(-60)
-    await drive.turn(-15)
-    await right_attach.run_angle(100,-130)
-
-    await drive.straight(-200)
+    await drive.straight(-110)
+    await drive.turn(70)
+    await drive.straight(-250)
+    await left_attach.run_angle(300,-300)
+    await drive.turn(-40)
+    await drive.straight(-500)
 
 
 
