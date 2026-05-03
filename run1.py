@@ -14,6 +14,8 @@ async def run1():
 
     await right_attach.run_angle(300, 130)
     await multitask(drive.turn(-35), wait(1500), race=True)
+    await drive.turn(20)
+    drive.settings(straight_speed=700)
 
     await drive.straight(-750)
 
