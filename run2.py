@@ -19,7 +19,7 @@ async def run2():
     await wait(1250)
     await drive.straight(-150)
     await drive.turn(-20)
-    drive.settings(straight_speed=400)
+    drive.settings(straight_speed=1000)
     await drive.straight(-550)
 
 

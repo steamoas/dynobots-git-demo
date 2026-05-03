@@ -9,7 +9,7 @@ from robot import drive, left_attach
 
 
 async def statue():
-    await drive.straight(280)
+    await drive.straight(290)
     await drive.turn(90)
     await drive.straight(515)
     await drive.turn(-90)
@@ -22,10 +22,10 @@ async def statue():
     await drive.straight(290)
     await left_attach.run_angle(200, 200)
     await drive.turn(-60)
-    await drive.straight(-250)
+    await drive.straight(-230)
     await drive.turn(90)
-    drive.settings(straight_speed=800)
-    await drive.straight(950)
+    drive.settings(straight_speed=1000)
+    await drive.straight(800)
     # await multitask(drive.straight(50), left_attach.run_angle(200, 50))
 
     # left_attach.run_time(300, 1000)
