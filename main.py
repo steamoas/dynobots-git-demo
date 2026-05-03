@@ -70,9 +70,9 @@ async def switcher(run_list: Dict):
 
 
 run_list = {}
-run_list.update({1: minecart})
+run_list.update({1: run3})
 run_list.update({2: run2})
-run_list.update({3: run3})
+run_list.update({3: minecart})
 run_list.update({4: statue})
 run_list.update({5: tip_the_scales_b})
 run_list.update({6: run1})
